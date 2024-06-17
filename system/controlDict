@@ -22,7 +22,7 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         400;
+endTime         402;
 
 deltaT          1;
 
@@ -48,8 +48,13 @@ runTimeModifiable true;
 
 // maxCo           1;
 
+libs ("libatmosphericModels.so");
+
 functions
 {
+    #includeFunc  singleGraph
+    #includeFunc  residuals
 }
+
 
 // ************************************************************************* //
