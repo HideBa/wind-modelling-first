@@ -14,7 +14,7 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-epsilonInlet  0.03; // Cmu^0.75 * k^1.5 / L ; L =10
+epsilonInlet  0.27;
 
 dimensions      [0 2 -3 0 0 0 0];
 
@@ -24,7 +24,8 @@ boundaryField
 {
     inlet
     {
-        type            fixedValue;
+        type            atmBoundaryLayerInletEpsilon;
+	#include	"include/ABLConditions";
         value           uniform $epsilonInlet;
     }
 
